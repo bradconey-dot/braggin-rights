@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Hoops Braggin' Rights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Oswald:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'engraved': ['Cinzel', 'serif'],
+                        'sports': ['Oswald', 'sans-serif'],
+                        'elegant': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        wood: '#5e3a21',
+                        woodDark: '#3a2212',
+                        silver: '#e2e8f0',
+                        silverDark: '#cbd5e1',
+                        crawfish: '#dc2626',
+                        hoops: '#ea580c'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* Wood Texture for the Plaque */
+        .wood-board {
+            background-color: #5e3a21;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(0,0,0,0.05) 0px,
+                    rgba(0,0,0,0.05) 2px,
+                    transparent 2px,
+                    transparent 4px
+                ),
+                linear-gradient(to right, #4a2d18, #6b4226, #4a2d18);
+            box-shadow: 
+                inset 0 0 20px rgba(0,0,0,0.8),
+                10px 15px 25px rgba(0,0,0,0.5);
+            border-radius: 4px;
+        }
+
+        /* Silver Metal Plates */
+        .metal-plate {
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 50%, #94a3b8 100%);
+            box-shadow: 
+                inset 1px 1px 2px rgba(255,255,255,0.8),
+                inset -1px -1px 3px rgba(0,0,0,0.3),
+                3px 4px 6px rgba(0,0,0,0.6);
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s, filter 0.3s;
+        }
+
+        .metal-plate:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                inset 1px 1px 2px rgba(255,255,255,0.8),
+                inset -1px -1px 3px rgba(0,0,0,0.3),
+                5px 6px 10px rgba(0,0,0,0.7);
+        }
+
+        /* The Engraved Text Effect */
+        .engraved-text {
+            color: #334155;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7), -1px -1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Corner Screws */
+        .screw {
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle at 30% 30%, #f1f5f9, #94a3b8);
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: inset -1px -1px 2px rgba(0,0,0,0.4), 1px 1px 1px rgba(255,255,255,0.4);
+        }
+        .screw::after {
+            content: '';
+            position: absolute;
+            top: 45%; left: 15%; right: 15%; height: 1px;
+            background: rgba(0,0,0,0.4);
+            transform: rotate(45deg);
+        }
+        .screw-tl { top: 6px; left: 6px; }
+        .screw-tr { top: 6px; right: 6px; }
+        .screw-bl { bottom: 6px; left: 6px; }
+        .screw-br { bottom: 6px; right: 6px; }
+
+        /* Dimming effect for interactivity */
+        .dimmed {
+            filter: grayscale(80%) brightness(0.6);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 min-h-screen py-8 px-4 md:px-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="font-sports text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-2 uppercase flex items-center justify-center gap-4">
+                <span class="text-hoops">🏀</span> 
+                Braggin' Rights 
+                <span class="text-crawfish">🦞</span>
+            </h1>
+            <p class="font-elegant text-xl md:text-2xl text-slate-600">Family Hoops Hall of Fame (2006 &ndash; 2025)</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <!-- LEFT COLUMN: The Plaque -->
+            <div class="lg:col-span-7 xl:col-span-8 flex justify-center">
+                <div class="wood-board w-full max-w-3xl p-6 md:p-10 border-8 border-woodDark">
+                    
+                    <!-- Top Main Plate -->
+                    <div class="metal-plate p-1 mb-10 mx-auto max-w-xl">
+                        <div class="border-2 border-red-600 p-4 md:p-6 bg-gradient-to-br from-gray-100 to-gray-300 relative flex items-center justify-center gap-4 md:gap-8">
+                            <div class="screw screw-tl"></div>
+                            <div class="screw screw-tr"></div>
+                            <div class="screw screw-bl"></div>
+                            <div class="screw screw-br"></div>
+                            
+                            <div class="text-4xl md:text-5xl drop-shadow-md">🏀</div>
+                            <div class="text-center">
+                                <h2 class="font-engraved text-xl md:text-3xl font-bold engraved-text leading-tight">
+                                    Family Hoops<br>
+                                    Braggin' Rights<br>
+                                    Champions
+                                </h2>
+                            </div>
+                            <div class="text-4xl md:text-5xl drop-shadow-md transform -scale-x-100">🦞</div>
+                        </div>
+                    </div>
+
+                    <!-- 3-Column Grid of Plates (Flowing top-to-bottom like the original plaque) -->
+                    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4" id="plaque-grid">
+                        <!-- Javascript will populate this -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Stats & Leaderboards -->
+            <div class="lg:col-span-5 xl:col-span-4 space-y-6">
+                
+                <!-- Reigning Champ Card -->
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl shadow-2xl p-6 border-b-4 border-yellow-400 text-center relative overflow-hidden group cursor-pointer transform transition-all hover:-translate-y-1" onmouseover="highlightName('Raiden Tucker')" onmouseout="resetHighlight()">
+                    <div class="absolute inset-0 bg-yellow-400 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="text-6xl mb-2 drop-shadow-[0_0_15px_rgba(250,204,21,0.6)] group-hover:scale-110 transition-transform">🏆</div>
+                        <h3 class="font-sports text-sm text-yellow-400 uppercase tracking-widest mb-1 drop-shadow-md">Defending 2025 Champion</h3>
+                        <h2 class="font-sports text-4xl md:text-5xl font-bold text-white tracking-wide">RAIDEN TUCKER</h2>
+                    </div>
+                </div>
+
+                <!-- Interactive Instructions -->
+                <div class="bg-blue-50 text-blue-800 text-sm px-4 py-3 rounded-lg border border-blue-200 flex items-center gap-3">
+                    <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                    Hover over the leaderboards below to highlight their winning years on the plaque!
+                </div>
+
+                <!-- The Bracket Queen -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-yellow-400 cursor-pointer transition-colors hover:bg-yellow-50" onmouseover="highlightName('Elaine Luttrull')" onmouseout="resetHighlight()">
+                    <div class="flex items-center gap-4">
+                        <div class="text-5xl">👑</div>
+                        <div>
+                            <h3 class="font-sports text-sm text-gray-500 uppercase tracking-widest">The Bracket Queen</h3>
+                            <h2 class="font-sports text-3xl font-bold text-slate-900">ELAINE LUTTRULL</h2>
+                            <p class="font-bold text-yellow-600">4 Total Wins</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-Win Club -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="font-sports text-xl text-slate-900 border-b pb-2 mb-4 uppercase tracking-wider flex items-center gap-2">
+                        <span class="text-silverDark">🎖️</span> The Multi-Win Club
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors" onmouseover="highlightName('Bennett Coney')" onmouseout="resetHighlight()">
+                            <span class="font-bold text-lg text-slate-700">Bennett Coney</span>
+                            <span class="bg-slate-200 text-slate-800 py-1 px-3 rounded-full font-bold">3 Wins</span>
+                        </li>
+                        <li class="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors" onmouseover="highlightName('James Grogan')" onmouseout="resetHighlight()">
+                            <span class="font-bold text-lg text-slate-700">James Grogan</span>
+                            <span class="bg-slate-200 text-slate-800 py-1 px-3 rounded-full font-bold">2 Wins</span>
+                        </li>
+                        <li class="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-2 rounded transition-colors" onmouseover="highlightName('Charlotte Coney')" onmouseout="resetHighlight()">
+                            <span class="font-bold text-lg text-slate-700">Charlotte Coney</span>
+                            <span class="bg-slate-200 text-slate-800 py-1 px-3 rounded-full font-bold">2 Wins</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Family Dynasties -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="font-sports text-xl text-slate-900 border-b pb-2 mb-4 uppercase tracking-wider flex items-center gap-2">
+                        <span class="text-crawfish">🔥</span> Family Dynasties
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="cursor-pointer group" onmouseover="highlightFamily('Coney')" onmouseout="resetHighlight()">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="font-bold text-slate-700 group-hover:text-hoops transition-colors">Team Coney</span>
+                                <span class="text-sm font-bold text-slate-500">6 Wins</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-hoops h-2.5 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="cursor-pointer group" onmouseover="highlightFamily('Grogan')" onmouseout="resetHighlight()">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="font-bold text-slate-700 group-hover:text-blue-600 transition-colors">Team Grogan</span>
+                                <span class="text-sm font-bold text-slate-500">4 Wins</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 66%"></div>
+                            </div>
+                        </div>
+
+                        <div class="cursor-pointer group" onmouseover="highlightFamily('Luttrull')" onmouseout="resetHighlight()">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="font-bold text-slate-700 group-hover:text-yellow-500 transition-colors">Team Luttrull</span>
+                                <span class="text-sm font-bold text-slate-500">4 Wins</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 66%"></div>
+                            </div>
+                        </div>
+
+                        <div class="cursor-pointer group" onmouseover="highlightFamily('Tucker')" onmouseout="resetHighlight()">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="font-bold text-slate-700 group-hover:text-crawfish transition-colors">Team Tucker</span>
+                                <span class="text-sm font-bold text-slate-500">2 Wins</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-crawfish h-2.5 rounded-full" style="width: 33%"></div>
+                            </div>
+                        </div>
+
+                        <div class="cursor-pointer group" onmouseover="highlightFamily('Lucito')" onmouseout="resetHighlight()">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="font-bold text-slate-700 group-hover:text-green-600 transition-colors">Team Lucito</span>
+                                <span class="text-sm font-bold text-slate-500">2 Wins</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-green-600 h-2.5 rounded-full" style="width: 33%"></div>
+                            </div>
+                        </div>
+
+                        <div class="cursor-pointer group" onmouseover="highlightFamily('Robison')" onmouseout="resetHighlight()">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="font-bold text-slate-700 group-hover:text-purple-600 transition-colors">Team Robison</span>
+                                <span class="text-sm font-bold text-slate-500">2 Wins</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 33%"></div>
+                            </div>
+                        </div>
+
+                        <div class="cursor-pointer group" onmouseover="highlightFamily('Virus')" onmouseout="resetHighlight()">
+                            <div class="flex justify-between items-end mb-1">
+                                <span class="font-bold text-slate-700 group-hover:text-lime-600 transition-colors">Team Virus 🦠</span>
+                                <span class="text-sm font-bold text-slate-500">1 Win</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-lime-500 h-2.5 rounded-full" style="width: 16%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Data and Interactivity Logic -->
+    <script>
+        const winners = [
+            { year: 2006, name: "CARLOS LUCITO", family: "Lucito" },
+            { year: 2007, name: "MIKE GROGAN", family: "Grogan" },
+            { year: 2008, name: "JAMES GROGAN", family: "Grogan" },
+            { year: 2009, name: "JAMES GROGAN", family: "Grogan" },
+            { year: 2010, name: "BENNETT CONEY", family: "Coney" },
+            { year: 2011, name: "KAREN ROBISON", family: "Robison" },
+            { year: 2012, name: "BRAD CONEY", family: "Coney" },
+            { year: 2013, name: "ELAINE LUTTRULL", family: "Luttrull" },
+            { year: 2014, name: "RITA GROGAN &<br>ELAINE LUTTRULL", family: "Grogan Luttrull" },
+            { year: 2015, name: "CASSIDY TUCKER", family: "Tucker" },
+            { year: 2016, name: "ELAINE LUTTRULL", family: "Luttrull" },
+            { year: 2017, name: "BENNETT CONEY", family: "Coney" },
+            { year: 2018, name: "CHARLOTTE CONEY", family: "Coney" },
+            { year: 2019, name: "RICHARD LUCITO", family: "Lucito" },
+            { year: 2020, name: "CORONA VIRUS", family: "Virus" },
+            { year: 2021, name: "BENNETT CONEY", family: "Coney" },
+            { year: 2022, name: "JANICE ROBISON", family: "Robison" },
+            { year: 2023, name: "ELAINE LUTTRULL", family: "Luttrull" },
+            { year: 2024, name: "CHARLOTTE CONEY", family: "Coney" },
+            { year: 2025, name: "RAIDEN TUCKER", family: "Tucker" }
+        ];
+
+        const grid = document.getElementById('plaque-grid');
+
+        // Render the plates
+        winners.forEach((winner, index) => {
+            // Determine text sizing based on name length (specifically for the 2014 tie)
+            let nameClass = "text-xs lg:text-sm";
+            if (winner.name.includes("<br>")) {
+                nameClass = "text-[9px] lg:text-[11px] leading-tight";
+            }
+
+            const plateHtml = `
+                <div class="metal-plate rounded p-2 md:p-3 text-center h-20 md:h-24 flex flex-col justify-center items-center mb-4 break-inside-avoid w-full" 
+                     data-name="${winner.name.replace('<br>', ' ')}" 
+                     data-family="${winner.family}">
+                    <div class="screw screw-tl"></div>
+                    <div class="screw screw-tr"></div>
+                    <div class="screw screw-bl"></div>
+                    <div class="screw screw-br"></div>
+                    <div class="font-engraved font-bold engraved-text uppercase ${nameClass} mb-1 w-full truncate whitespace-normal">
+                        ${winner.name}
+                    </div>
+                    <div class="font-engraved font-bold engraved-text text-xs text-slate-600">
+                        ${winner.year}
+                    </div>
+                </div>
+            `;
+            grid.innerHTML += plateHtml;
+        });
+
+        // Interactivity functions
+        const allPlates = document.querySelectorAll('.metal-plate[data-name]');
+
+        function highlightName(searchName) {
+            allPlates.forEach(plate => {
+                if (plate.getAttribute('data-name').includes(searchName.toUpperCase())) {
+                    plate.classList.remove('dimmed');
+                    plate.style.transform = 'scale(1.05)';
+                    plate.style.zIndex = '10';
+                } else {
+                    plate.classList.add('dimmed');
+                    plate.style.transform = 'scale(1)';
+                    plate.style.zIndex = '1';
+                }
+            });
+        }
+
+        function highlightFamily(familyName) {
+            allPlates.forEach(plate => {
+                if (plate.getAttribute('data-family').includes(familyName)) {
+                    plate.classList.remove('dimmed');
+                    plate.style.transform = 'scale(1.05)';
+                    plate.style.zIndex = '10';
+                } else {
+                    plate.classList.add('dimmed');
+                    plate.style.transform = 'scale(1)';
+                    plate.style.zIndex = '1';
+                }
+            });
+        }
+
+        function resetHighlight() {
+            allPlates.forEach(plate => {
+                plate.classList.remove('dimmed');
+                plate.style.transform = 'scale(1)';
+                plate.style.zIndex = '1';
+            });
+        }
+    </script>
+</body>
+</html>
